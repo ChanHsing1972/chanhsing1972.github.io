@@ -17,20 +17,17 @@ window.MathJax = {
     processEscapes: true,
     processEnvironments: true,
     tags: 'ams',
-    // 加载额外的 LaTeX 包
-    packages: {'[+]': ['base', 'ams', 'noerrors', 'noundefined', 'boldsymbol', 'newcommand']},
-    // 添加自定义宏以支持更多 LaTeX 语法
+    // Load extra LaTeX packages. Do not redefine built-in commands such as
+    // \displaystyle or \boldsymbol; doing so can create recursive macro
+    // expansion errors in MathJax.
+    packages: {'[+]': ['ams', 'noerrors', 'noundefined', 'boldsymbol', 'newcommand']},
+    // Add only custom macros that are not already built in.
     macros: {
       // 支持 \left\{ 和 \right\}
       lcurl: '\\{',
       rcurl: '\\}',
       // 支持 \xRightarrow
-      xRightarrow: ['\\overset{#1}{\\Longrightarrow}', 1],
-      // 其他常用宏
-      displaystyle: '\\displaystyle',
-      boldsymbol: ['\\mathbf{#1}', 1],
-      // 确保 \text 命令可用
-      text: ['\\textrm{#1}', 1]
+      xRightarrow: ['\\overset{#1}{\\Longrightarrow}', 1]
     }
   },
   svg: {
