@@ -5,6 +5,9 @@
  */
 
 window.MathJax = {
+  loader: {
+    load: ['[tex]/ams', '[tex]/boldsymbol', '[tex]/newcommand', '[tex]/noerrors', '[tex]/noundefined']
+  },
   tex: {
     inlineMath: [
       ['$', '$'],

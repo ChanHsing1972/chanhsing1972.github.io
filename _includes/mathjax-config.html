@@ -1,6 +1,9 @@
 <!-- 自定义 MathJax 配置 -->
 <script>
   window.MathJax = {
+    loader: {
+      load: ['[tex]/ams', '[tex]/boldsymbol', '[tex]/noerrors', '[tex]/noundefined']
+    },
     tex: {
       inlineMath: [['$', '$'], ['\\(', '\\)']],
       displayMath: [['$$', '$$'], ['\\[', '\\]']],
